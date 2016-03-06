@@ -1,0 +1,188 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style>
+
+        
+    @font-face {
+    font-family: Proxima Nova;
+    src: url(ProximaNova-Reg.woff);
+        }
+    body {width: 100%; font-family: Proxima Nova, sans-serif;}
+    #total {width: 100%; height: 560px; margin: 0 auto;
+    padding-left: 0%; color: aliceblue; display: inline-block;}
+    #reader {display: inline-block;background: #212e4f; width: 20%; height: 400px; margin-left: 2%; border-radius: 8px; padding: 3%; margin-left:10px; box-shadow: 5px 5px 3px #888888; margin: 0;  vertical-align: top;}
+    #translator {display: inline-block;background: #212e4f; width: 20%; height: 400px; border-radius: 8px; padding: 3%; box-shadow: 5px 5px 3px #888888; margin: 0;  vertical-align: top;}
+    #translator2 {display: inline-block;background: #212e4f; width: 20%; height: 400px; border-radius: 8px; padding: 3%; box-shadow: 5px 5px 3px #888888; margin: 0;  vertical-align: top;}
+    #recorded {align-self: center; height: 80%; background-color: aliceblue; color: black; font-size: 12px; padding-left: 5px; padding-right: 5px;}
+    #translated {align-self: center; height: 80%; background-color: aliceblue; color: black; font-size: 12px; padding-left: 5px; padding-right: 5px; position: static;} 
+    #translated2 {align-self: center; height: 80%; background-color: aliceblue; padding-left: 5px; padding-right: 5px; color: black;}
+    ul {
+    list-style-type: none;
+    margin: -10;
+    padding: 0;
+    overflow: hidden;
+    background-color: #212e4f;
+    }
+    li {
+        float: left;
+    }
+    li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: #171f36;
+    }
+        
+</style>
+</head>
+<body>
+    <ul>
+      <li><a href="#contact">Go Back</a></li>
+      <li><a class="active" href="#home">Patient: Daphne Connors</a></li>
+      <li><a href="#news">History of Present Illnesses</a></li>
+    </ul>
+    <br><br><br>
+    <div id="total">
+        <div id="reader" class="form">
+            Recorded: <img id="mic" align='right' src="https://github.com/GoogleChrome/webplatform-samples/blob/master/webspeechdemo/mic.gif?raw=true" width=50px height=50px onclick='startRecord()'/><br><br><br>
+            <div id='recorded'></div>
+        </div>
+        <img id="arrow" width='30px' hspace='30px' src='http://alexoliveira.me/Hawaii/images/chevron-right.png'/>
+        <div id="translator" class="form">   
+            Important Phrases:<br><br><br>
+            <div id='translated'></div>
+        </div>
+        <img id="arrow" width='30px' hspace='30px' src='http://alexoliveira.me/Hawaii/images/chevron-right.png'/>
+        <div id="translator2" class="form">   
+            Translated:<br><br><br>
+            <div id='translated2'></div>
+        </div>
+    </div>
+    <script>
+        function startRecord() {
+            if  (document.getElementById("mic").src=="https://github.com/GoogleChrome/webplatform-samples/blob/master/webspeechdemo/mic.gif?raw=true") {
+                document.getElementById("mic").src='mic-animated.gif';
+                
+               
+                var data = $.getJSON("ibmoutput.json", function(d) {
+
+                        setTimeout(wait, 8700);
+                        setTimeout(wait1, 11300);
+                        setTimeout(wait2, 16500);
+                        setTimeout(wait3, 18900);
+                        setTimeout(wait4, 24400);
+                        setTimeout(wait5, 26100);
+                        setTimeout(wait6, 27000);
+                        setTimeout(wait7, 31000);
+                        setTimeout(wait8, 34800);
+                        setTimeout(wait9, 40800);
+                        setTimeout(wait10, 45200);
+
+
+
+                        function wait() {
+                            $("#recorded").append(d.results[1].alternatives[0].transcript +"<br>");
+                            
+                        }
+                    function wait1() {
+                            $("#recorded").append(d.results[2].alternatives[0].transcript +"<br>");
+                        
+                        }
+                    function wait2() {
+                            $("#recorded").append(d.results[3].alternatives[0].transcript +"<br>");
+ 
+                        }
+                    function wait3() {
+                            $("#recorded").append(d.results[4].alternatives[0].transcript +"<br>");
+   
+                        }
+                    function wait4() {
+                            $("#recorded").append(d.results[5].alternatives[0].transcript +"<br>");
+         
+                        }
+                    function wait5() {
+                            $("#recorded").append(d.results[6].alternatives[0].transcript +"<br>");
+     
+                        }
+                    function wait6() {
+                            $("#recorded").append(d.results[7].alternatives[0].transcript +"<br>");
+  
+                        }
+                    function wait7() {
+                            $("#recorded").append(d.results[8].alternatives[0].transcript +"<br>");
+                        console.log(d.results[8].alternatives[0].transcript +"<br>");
+                        }
+                    function wait8() {
+                            $("#recorded").append(d.results[9].alternatives[0].transcript +"<br>");
+
+                        }
+                    function wait9() {
+                            $("#recorded").append(d.results[10].alternatives[0].transcript +"<br>");
+     
+                        }
+                    function wait10() {
+                            $("#recorded").append(d.results[11].alternatives[0].transcript +"<br>");
+
+                        }
+                    
+
+
+}); 
+                
+                setTimeout(func, 47000);
+                function func() {
+                    $("#translated").html("D: How are you doing today <br>P: not too well my chest was hurting last night and I was sweating a lot. <br>D: Okay tell me more about this pain. <br>P: Well it woke me up last night but it went away after five to ten minutes. <br>D: Could you describe the pain more for me. <br>P: My chest felt heavy and very tight almost as that someone was squeezing my chest. <br>D: Where was the pain. <br>P: Right about here. <br>D: Okay so the pain was about your stomach in the middle of your chest. This sounds like it was very uncomfortable for you anything help decrease the pain. <br>P: Yes this was very uncomfortable I sat up and moved around the room but that didn't help. I also took some times because I thought it was heartburn but that was useless to.");
+                    $("#translated").highlight("chest was hurting");
+                    $("#translated").highlight("sweating a lot");
+                    $("#translated").highlight("woke me up last night");
+                    $("#translated").highlight("went away after five to ten minutes");
+                    $("#translated").highlight("chest felt heavy and very tight");
+                    $("#translated").highlight("about your stomach in the middle of your chest");
+                    $("#translated").highlight("sat up and moved around the room but that didn’t help");
+                    $("#translated").highlight("took some times");
+                    $("#translated").highlight("heartburn");
+                    $("#translated").highlight("that was useless");
+                    }
+                
+            var data2 = $.getJSON("translatedOutput.json", function(d) {
+            
+            setTimeout(finalWait, 50000);
+            function finalWait() {
+            $("#translated2").append("- "+d.line1[0]+"<br>");
+            $("#translated2").append("- "+d.line1[1]+"<br>");
+            $("#translated2").append("- "+d.line2[0] +"<br>");
+            $("#translated2").append("- "+d.line3[0] +"<br>");
+            
+            }
+        }); 
+                
+            } else {
+                document.getElementById("mic").src="https://github.com/GoogleChrome/webplatform-samples/blob/master/webspeechdemo/mic.gif?raw=true";
+                
+            } 
+        };
+            
+            
+            jQuery.fn.highlight = function (str) {
+                var regex = new RegExp(str, "gi");
+                return this.each(function () {
+                    this.innerHTML = this.innerHTML.replace(regex, function(matched) {
+                        return "<span style='background-color: #FFFF00'>" + matched + "</span>";
+                    });
+                });
+            };
+            
+
+            
+        
+
+    </script>  
+</body>
+</html>

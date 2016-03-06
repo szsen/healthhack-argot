@@ -1,0 +1,19 @@
+IBM Watson: sucked at reading EMR for cancer
+OCR issue for pdfs
+
+need to know how clinical notes are structured
+-discharge summary: needs to know themes/purpose of every section
+has medication list, don't want to look for symptoms
+clinical document architecture
+
+terminology differences from different doctors
+-need nlp engine that says terms are synonymous
+-concept map showing relations of words
+
+correct sentence in correct context is powerful, but wrong sentence in wrong context means lots of backtracking/corrections/subsitution
+
+continuity of care document in oncology, similar to discharge
+
+ari caroline nymsc, nlpguy
+
+don't want to put patients into templates
